@@ -325,11 +325,11 @@ func (p *Parser) duplicateRouteCheck(nestedApi *Api) error {
 }
 
 func (p *Parser) nestedApiCheck(mainApi, nestedApi *Api) error {
-	if len(nestedApi.Import) > 0 {
-		importToken := nestedApi.Import[0].Import
-		return fmt.Errorf("%s line %d:%d the nested api does not support import",
-			nestedApi.LinePrefix, importToken.Line(), importToken.Column())
-	}
+	// if len(nestedApi.Import) > 0 {
+	// 	importToken := nestedApi.Import[0].Import
+	// 	return fmt.Errorf("%s line %d:%d the nested api does not support import",
+	// 		nestedApi.LinePrefix, importToken.Line(), importToken.Column())
+	// }
 
 	if mainApi.Syntax != nil && nestedApi.Syntax != nil {
 		if mainApi.Syntax.Version.Text() != nestedApi.Syntax.Version.Text() {
